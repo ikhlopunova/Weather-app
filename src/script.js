@@ -9,7 +9,7 @@ function formatDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
 
   let months = [
@@ -24,7 +24,7 @@ function formatDate(date) {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
   let currentYear = date.getFullYear();
   let currentDate = date.getDate();
@@ -33,7 +33,7 @@ function formatDate(date) {
   const str = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "numeric",
-    hour12: false
+    hour12: false,
   });
 
   let formattedDate = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear} ${str}`;
@@ -73,7 +73,7 @@ function handlePosition(position) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 function getPosition(event) {
