@@ -1,0 +1,76 @@
+.whole-page {
+  background-image: url(image/sky.jpg);
+  margin: 50px auto;
+  border-radius: 15px;
+  max-width: 900px;
+}
+body {
+  font-family: "PT Mono", monospace;
+  background-size: cover;
+  background-image: url(image/sky.jpg);
+}
+li {
+  list-style: none;
+}
+h2 {
+  text-align: center;
+}
+.cairo,
+.temp {
+  padding-top: 25px;
+  text-align: center;
+  color: white;
+  font-size: 48px;
+}
+.temp {
+  font-size: 40px;
+  color: white;
+}
+.celsius,
+.fahrenheit {
+  font-size: 20px;
+  position: relative;
+  top: -16px;
+  color: white;
+  text-decoration: none;
+}
+.line {
+  font-size: 28px;
+  position: relative;
+  top: -4px;
+}
+#city-form {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.button {
+  color: #002759;
+  background-color: white
+  justify-content: flex-end;
+  transition: all 200ms ease-in-out;
+  position: relative;
+  left: 81%;
+  transform: translate(-50%, 0);
+}
+
+button:hover {
+  background: #002759;
+  color: white;
+  cursor: pointer;
+}
+.august {
+  color: white;
+  font-size: 18px;
+}
+.forecast {
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+.iryna {
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+}
