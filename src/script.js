@@ -64,6 +64,7 @@ function showTemperature(response) {
     response.data.main.feels_like
   )}°C`;
   document.querySelector("#city").innerHTML = `${response.data.name}`;
+  let celciusTemperature = response.data.main.temp;
 }
 
 let changeButton = document.querySelector("#city-form");
@@ -85,16 +86,18 @@ currentButton.addEventListener("click", getPosition);
 
 // function convertToCelcius(event) {
 //   event.preventDefault();
-//   let tempCelcius = document.querySelector("#temperature");
-//   tempCelcius.innerHTML = ${currentTemperature};
+//   // document.querySelector("#temperature").innerHTML
+//   let response = Math.round(celciusTemperature);
+//   console.log(response);
 // }
 // let celciusLink = document.querySelector("#celsius");
 // celciusLink.addEventListener("click", convertToCelcius);
 
 // function convertToFarenheit(event) {
 //   event.preventDefault();
-//   let tempFarenheit = document.querySelector("#temperature");
-//   tempFarenheit.innerHTML = 95;
+//   let tempCelsius = Math.round(response.data.main.temp);
+//   let tempToFarenheit = (tempCelsius * 1, 8) + 32;
+//   tempToFarenheit.innerHTML = `${tempToFarenheit}`;
 // }
 // let farenheitLink = document.querySelector("#fahrenheit");
 // farenheitLink.addEventListener("click", convertToFarenheit);
