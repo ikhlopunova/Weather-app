@@ -49,7 +49,7 @@ function showTemperature(response) {
   document.querySelector(
     "#humidity"
   ).innerHTML = `humidity - ${response.data.main.humidity} % 💧`;
-  document.querySelector("#feels_like").innerHTML = `feels like ${Math.round(
+  document.querySelector("#feels_like").innerHTML = `feels like - ${Math.round(
     response.data.main.feels_like
   )}°C`;
   document.querySelector("#city").innerHTML = `${response.data.name}`;
