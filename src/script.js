@@ -2,30 +2,23 @@ let li = document.querySelector("li");
 let currentTime = new Date();
 
 function formatDate(date) {
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
   ];
-  let currentYear = date.getFullYear();
-  let currentDate = date.getDate();
-  let currentMonth = months[date.getMonth()];
+  let day = days[date.getDay()];
   const str = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "numeric",
     hour12: false,
   });
 
-  let formattedDate = `${currentMonth} ${currentDate}, ${currentYear} ${str}`;
+  let formattedDate = `${day} ${str}`;
   return formattedDate;
 }
 li.innerHTML = formatDate(currentTime);
@@ -53,10 +46,15 @@ function showTemperature(response) {
     response.data.main.feels_like
   )}°C`;
   document.querySelector("#city").innerHTML = `${response.data.name}`;
-  let celciusTemperature = response.data.main.temp;
   document.querySelector(
     "#conditions"
   ).innerHTML = `${response.data.weather[0].description}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let changeButton = document.querySelector("#city-form");
