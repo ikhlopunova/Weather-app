@@ -74,3 +74,6 @@ footer {
   color: white;
   padding-top: 20px;
 }
+li:first-letter {
+  text-transform: capitalize;
+}

@@ -2,16 +2,6 @@ let li = document.querySelector("li");
 let currentTime = new Date();
 
 function formatDate(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
   let months = [
     "January",
     "February",
@@ -29,14 +19,13 @@ function formatDate(date) {
   let currentYear = date.getFullYear();
   let currentDate = date.getDate();
   let currentMonth = months[date.getMonth()];
-  let currentDay = days[date.getDay()];
   const str = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "numeric",
     hour12: false,
   });
 
-  let formattedDate = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear} ${str}`;
+  let formattedDate = `${currentMonth} ${currentDate}, ${currentYear} ${str}`;
   return formattedDate;
 }
 li.innerHTML = formatDate(currentTime);
@@ -65,6 +54,9 @@ function showTemperature(response) {
   )}°C`;
   document.querySelector("#city").innerHTML = `${response.data.name}`;
   let celciusTemperature = response.data.main.temp;
+  document.querySelector(
+    "#conditions"
+  ).innerHTML = `${response.data.weather[0].description}`;
 }
 
 let changeButton = document.querySelector("#city-form");
