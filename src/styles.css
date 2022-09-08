@@ -27,6 +27,13 @@ h2 {
   top: -16px;
   color: white;
   text-decoration: none;
+  cursor: default;
+}
+.temp .active {
+  color: white;
+}
+.temp .active:hover {
+  color: white;
 }
 .line {
   font-size: 28px;
