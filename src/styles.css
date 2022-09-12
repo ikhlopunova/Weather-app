@@ -29,12 +29,7 @@ h2 {
   text-decoration: none;
   cursor: default;
 }
-.temp .active {
-  color: white;
-}
-.temp .active:hover {
-  color: white;
-}
+
 .line {
   font-size: 28px;
   position: relative;
@@ -83,4 +78,8 @@ li:first-letter {
   margin: 50px auto;
   border-radius: 30px;
   max-width: 800px;
+}
+
+.forecast-temp-max {
+  font-weight: bold;
 }
