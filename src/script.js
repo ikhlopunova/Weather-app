@@ -115,7 +115,7 @@ function displayForecast() {
                   <span class="forecast-temp-min">28°</span>
                   <br>
                   <img
-                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  src="https://openweathermap.org/img/wn/50d@2x.png"
                   alt=""
                   width="40"
                 />
