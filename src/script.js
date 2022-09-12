@@ -98,3 +98,34 @@ farenheitLink.addEventListener("click", convertToFarenheit);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wed", "Thu"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `     <div class="col-3">
+            <div class="card">
+            <div class="forecast-date"><strong>${day}</strong>
+                  <br>
+                  <span class="forecast-temp-max">39°/</span>
+                  <span class="forecast-temp-min">28°</span>
+                  <br>
+                  <img
+                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  alt=""
+                  width="40"
+                />
+          </div>
+          </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+displayForecast();

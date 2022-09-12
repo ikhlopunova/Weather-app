@@ -78,7 +78,7 @@ li:first-letter {
   margin: 50px auto;
   border-radius: 30px;
   max-width: 800px;
-}
+  }
 
 .forecast-temp-max {
   font-weight: bold;
