@@ -23,6 +23,14 @@ function formatDate(date) {
 }
 li.innerHTML = formatDate(currentTime);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function changeCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#form1");
@@ -64,6 +72,7 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
   getForecast(response.data.coord);
 }
 
@@ -107,31 +116,40 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 function displayForecast(response) {
-  console.log(response.data.daily);
-  let forecast = document.querySelector("#forecast");
-  let days = ["Mon", "Tue", "Wed", "Thu"];
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `     <div class="col-3">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `     <div class="col-3">
             <div class="card">
-            <div class="forecast-date"><strong>${day}</strong>
+            <div class="forecast-date"><strong>${formatDay(
+              forecastDay.dt
+            )}</strong> 
                   <br>
-                  <span class="forecast-temp-max">39°/</span>
-                  <span class="forecast-temp-min">28°</span>
+                  <span class="forecast-temp-max"> ${Math.round(
+                    forecastDay.temp.max
+                  )}°/</span>
+                  <span class="forecast-temp-min">${Math.round(
+                    forecastDay.temp.min
+                  )}°</span>
                   <br>
                   <img
-                  src="https://openweathermap.org/img/wn/50d@2x.png"
+                  src="https://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }.png"
                   alt=""
-                  width="40"
+                  width="50"
                 />
           </div>
           </div>
           </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
-  forecast.innerHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
 }
