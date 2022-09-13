@@ -29,6 +29,9 @@ h2 {
   text-decoration: none;
   cursor: default;
 }
+.divider {
+  color: white;
+}
 
 .line {
   font-size: 28px;
@@ -77,9 +80,17 @@ li:first-letter {
   background-image: url("../image/sky.jpg");
   margin: 50px auto;
   border-radius: 30px;
-  max-width: 800px;
-  }
+  max-width: 900px;
+  align-items: stretch;
+}
 
 .forecast-temp-max {
   font-weight: bold;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
 }

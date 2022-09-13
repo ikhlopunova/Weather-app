@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Weather app</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,25 +25,32 @@
     ></script>
     <script
       src="https://kit.fontawesome.com/b3186a4528.js"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
-     </head>
+  </head>
   <body>
     <div class="container whole-page">
       <div class="input-group">
         <div class="form-outline">
           <form id="city-form">
-            <input type="search" id="form1" placeholder="Enter your city🔍" />     
-        <button type="submit" class="btn btn-primary">Search</button>
-      </form>
-      
+            <input type="search" id="form1" placeholder="Enter your city🔍" />
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      </div>
+
       <button id="button">Current location</button>
-         <h1 class="cairo" id="city">Location</h1>
+      <h1 class="cairo" id="city">Location</h1>
       <h2>
         <span class="temp" id="temperature"> </span
-        ><a href="#" class="celsius"  id="celsius"
-          >℃ |<a href="#" class="fahrenheit" id="fahrenheit">℉</a>
+        ><a href="#" class="celsius" id="celsius">℃</a> |<a
+          href="#"
+          class="fahrenheit"
+          id="fahrenheit"
+          >℉</a
+        >
       </h2>
       <div class="row">
         <div class="col-5 offset-4">
@@ -51,23 +58,36 @@
             <li>
               <strong> Aug, 06 2022</strong>
             </li>
-            <li id="conditions">weather conditions </li>
-            <li id="feels_like">feels like </li>
-            <li id="humidity">humidity </li>
-            <li id="wind">wind </li>
+            <li id="conditions">weather conditions</li>
+            <li id="feels_like">feels like</li>
+            <li id="humidity">humidity</li>
+            <li id="wind">wind</li>
           </ul>
         </div>
         <div class="col-2">
-          <img src=" " alt="weather" width="180px" id = "icon"/>
+          <img src=" " alt="weather" width="180px" id="icon" />
         </div>
       </div>
       <!-- Forecast template -->
-      <div class="container forecast" id = "forecast">
-        
-         </div>
-      </div>
+      <div class="container forecast" id="forecast"></div>
       <footer>
-     Coded by Iryna Khlopunova and is an <a class="github-footer" target="_blank" href="https://github.com/ikhlopunova/Weather-app">open-sourced on GitHub</a>
+        Coded by Iryna Khlopunova and is an
+        <a
+          class="github-footer"
+          target="_blank"
+          href="https://github.com/ikhlopunova/Weather-app"
+          >open-sourced on GitHub</a
+        >
+      </footer>
+    </div>
+    <footer>
+      Coded by Iryna Khlopunova and is an
+      <a
+        class="github-footer"
+        target="_blank"
+        href="https://github.com/ikhlopunova/Weather-app"
+        >open-sourced on GitHub</a
+      >
     </footer>
     <script src="src/script.js"></script>
   </body>
