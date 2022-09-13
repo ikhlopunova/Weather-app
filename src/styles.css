@@ -8,13 +8,16 @@ li {
 }
 h2 {
   text-align: center;
+  color: white;
+  font-size: 20px;
+  padding-top: 25px;
 }
 .cairo,
 .temp {
   padding-top: 25px;
   text-align: center;
   color: white;
-  font-size: 48px;
+  font-size: 58px;
 }
 .temp {
   font-size: 40px;
@@ -29,15 +32,7 @@ h2 {
   text-decoration: none;
   cursor: default;
 }
-.divider {
-  color: white;
-}
 
-.line {
-  font-size: 28px;
-  position: relative;
-  top: -4px;
-}
 #city-form {
   position: relative;
   left: 50%;
@@ -63,7 +58,7 @@ button:hover {
   font-size: 18px;
 }
 .forecast {
-  font-size: 18px;
+  font-size: 22px;
   margin-top: 10px;
   text-align: center;
 }
