@@ -26,7 +26,15 @@ li.innerHTML = formatDate(currentTime);
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuersday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
   return days[day];
 }
@@ -47,9 +55,9 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 function showTemperature(response) {
-  document.querySelector("#temperature").innerHTML = Math.round(
+  document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
-  );
+  )}℃`;
   document.querySelector("#wind").innerHTML = `wind - ${Math.round(
     response.data.wind.speed
   )} km/h 💨`;
@@ -91,13 +99,6 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-function convertToFarenheit(event) {
-  event.preventDefault();
-  let tempToFarenheit = (celsiusTemperature * 9) / 5 + 32;
-  document.querySelector("#temperature").innerHTML =
-    Math.round(tempToFarenheit);
-}
-
 function convertToCelsius(event) {
   event.preventDefault();
   document.querySelector("#temperature").innerHTML =
@@ -108,12 +109,6 @@ let celsiusTemperature = null;
 
 let currentButton = document.querySelector("#button");
 currentButton.addEventListener("click", getPosition);
-
-let farenheitLink = document.querySelector("#fahrenheit");
-farenheitLink.addEventListener("click", convertToFarenheit);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", convertToCelsius);
 
 function displayForecast(response) {
   let forecast = response.data.daily;

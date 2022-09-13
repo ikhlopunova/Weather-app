@@ -8,29 +8,17 @@ li {
 }
 h2 {
   text-align: center;
-  color: white;
-  font-size: 20px;
-  padding-top: 25px;
 }
-.cairo,
-.temp {
+.cairo {
   padding-top: 25px;
   text-align: center;
   color: white;
   font-size: 58px;
 }
 .temp {
-  font-size: 40px;
+  font-size: 48px;
   color: white;
-}
-.celsius,
-.fahrenheit {
-  font-size: 20px;
-  position: relative;
-  top: -16px;
-  color: white;
-  text-decoration: none;
-  cursor: default;
+  text-align: center;
 }
 
 #city-form {
@@ -39,11 +27,6 @@ h2 {
   transform: translate(-50%, 0);
 }
 .button {
-  color: #002759;
-  background-color: white;
-  justify-content: flex-end;
-  transition: all 200ms ease-in-out;
-  position: relative;
   left: 81%;
   transform: translate(-50%, 0);
 }
