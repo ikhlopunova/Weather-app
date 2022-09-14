@@ -21,7 +21,7 @@ function formatDate(date) {
   let formattedDate = `${day} ${str}`;
   return formattedDate;
 }
-li.innerHTML = formatDate(currentTime);
+li.innerHTML = `Last updated - ${formatDate(currentTime)}`;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -29,7 +29,7 @@ function formatDay(timestamp) {
   let days = [
     "Sunday",
     "Monday",
-    "Tuersday",
+    "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
